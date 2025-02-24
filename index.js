@@ -54,17 +54,19 @@ const main = async (loop, loopConfirm) => {
           break;
         case "7":
           consola.info("Program File App");
-          await programFile(rl);
+          await programFile(rl, true, true);
           break;
         default:
           consola.warn("Programme not found");
           break;
       }
 
+      // asked for confirmation on whether to continue the My Program App
       loopConfirm = true;
       while (loopConfirm) {
+        consola.start('My Program App said : ');
         const confirm = await rl.question(
-          "Will you continue the programme? \n(yes/no) > "
+          "Will you continue the my programme? \n(yes/no) > "
         );
         switch (confirm) {
           case "no":
