@@ -1,3 +1,5 @@
+import { consola } from "consola";
+
 export const checkPalindrom = (word) => {
   let reverseWord = [];
   for (let i = word.length - 1; i >= 0; i--) {
@@ -7,8 +9,8 @@ export const checkPalindrom = (word) => {
   for (let i = 0; i < word.length; i++) {
     word.charAt(i) !== reverseWord[i] ? false : checkWord.push(true);
   }
-  if (checkWord.length !== word.length) return console.log("Not palindrom");
-  if (checkWord.length === word.length) return console.log("Palindrom");
+  if (checkWord.length !== word.length) return consola.success("Not palindrom");
+  if (checkWord.length === word.length) return consola.success("Palindrom");
 };
 
 export const reverseSentence = (sentence) => {
@@ -17,5 +19,5 @@ export const reverseSentence = (sentence) => {
   for (let i = arrWord.length - 1; i >= 0; i--) {
     reverseWord.push(arrWord[i]);
   }
-  console.log(reverseWord);
+  consola.success(reverseWord);
 };

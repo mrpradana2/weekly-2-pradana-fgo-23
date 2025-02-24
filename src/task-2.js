@@ -1,3 +1,5 @@
+import { consola } from "consola";
+
 export async function getDataFromServer(status, callback) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -20,10 +22,10 @@ export async function processData(data, err) {
       throw new Error(
         "The data type retrieved by the server is not an object or array"
       );
-    return console.log(responseServer);
+    return consola.success(responseServer);
   } catch (err) {
     if (err instanceof Error) return console.log(err.message);
   } finally {
-    console.log("Proses selesai");
+    consola.success("Proses selesai");
   }
 }

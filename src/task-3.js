@@ -1,3 +1,5 @@
+import { consola } from "consola";
+
 export const getData = async (url) => {
   try {
     const responseServer = await fetch(url);
@@ -11,10 +13,10 @@ export const getData = async (url) => {
       if (a.domicile < b.domicile) return -1;
       if (a.domicile > b.domicile) return 1;
     });
-    return console.log(user);
+    return consola.success(user);
   } catch (err) {
     if (err instanceof Error) console.log(err.message);
   } finally {
-    console.log("Process completed");
+    consola.success("Process completed");
   }
 };

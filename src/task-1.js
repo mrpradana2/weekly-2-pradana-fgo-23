@@ -1,3 +1,5 @@
+import { consola } from "consola";
+
 function fetchData(status) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -28,7 +30,7 @@ export async function getResponseData(status) {
   } catch (err) {
     if (err instanceof Error) console.log(err.message);
   } finally {
-    console.log("Proses selesai");
+    consola.success("Proses selesai");
   }
 }
 
