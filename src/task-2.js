@@ -22,7 +22,7 @@ export async function processData(data, err) {
       throw new Error(
         "The data type retrieved by the server is not an object or array"
       );
-    return consola.success(responseServer);
+    return console.log(responseServer);
   } catch (err) {
     if (err instanceof Error) return console.log(err.message);
   } finally {

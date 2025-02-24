@@ -13,7 +13,7 @@ export const getData = async (url) => {
       if (a.domicile < b.domicile) return -1;
       if (a.domicile > b.domicile) return 1;
     });
-    return consola.success(user);
+    return console.log(user);
   } catch (err) {
     if (err instanceof Error) console.log(err.message);
   } finally {
